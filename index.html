@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>Task Manager</title>
 </head>
 
 <body>
@@ -78,44 +78,40 @@
 
 
         <!-- Bill Content Goes Here -->
+        <div class="row justify-content-center">
+            <form class="col-8 p-3">
+                <div class="form-row row">
+                    <div class="form-group col-lg-12">
+                        <label for="inputTask">Task</label>
+                        <input type="text" class="form-control" id="task" placeholder="Task">
+                    </div>
+                </div>
+                <div class="form-row row">
+                    <div class="form-group col-lg-6">
+                        <label for="materials">Materials Needed</label>
+                        <select id="materials" class="form-control">
+                            <option selected>Choose...</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label for="dueDate">Due Date</label>
+                        <select id="dueDate" class="form-control">
+                            <option selected>Choose...</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary mt-3" id="newTask" type="button">Create Task</button>
+                </div>
+            </form>
+            <div>
 
+            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-
-
-    <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script src="bill.js"></script>
-    <script src="laura.js"></script>
-    <script src="michael.js"></script>
+            <script src="node_modules/jquery/dist/jquery.js"></script>
+            <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+            <script src="global.js"></script>
+            <script src="laura.js"></script>
+            <script src="michael.js"></script>
+            <script src="bill.js"></script>
 </body>
 
 </html>
