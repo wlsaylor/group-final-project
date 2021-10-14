@@ -82,8 +82,8 @@
             <form class="col-8 p-3">
                 <div class="form-row row">
                     <div class="form-group col-lg-12">
-                        <label for="inputTask">Task</label>
-                        <input type="text" class="form-control" id="task" placeholder="Task">
+                        <label for="task">Task Name</label>
+                        <input type="text" class="form-control" id="task" placeholder="Task Name">
                     </div>
                 </div>
                 <div class="form-row row">
@@ -91,27 +91,42 @@
                         <label for="materials">Materials Needed</label>
                         <select id="materials" class="form-control">
                             <option selected>Choose...</option>
+                            <option>Test Materials</option>
                         </select>
                     </div>
                     <div class="form-group col-lg-6">
-                        <label for="dueDate">Due Date</label>
-                        <select id="dueDate" class="form-control">
+                        <label for="due-date">Due Date</label>
+                        <select id="due-date" class="form-control">
                             <option selected>Choose...</option>
+                            <option>Test Date</option>
                         </select>
                     </div>
-                    <button class="btn btn-primary mt-3" id="newTask" type="button">Create Task</button>
+                    <button class="btn btn-primary mt-3" id="new-task" onclick="onCreateTask()" type="button">Create
+                        Task</button>
                 </div>
             </form>
-            <div>
 
+            <div class="col-lg-8 m-3">
+                <table id="task-list"
+                    class="table table-hover table-light table-striped text-center justify-content-center">
+                    <tr>
+                        <th scope="col">Task</th>
+                        <th scope="col">Due Date</th>
+                        <th scope="col">Materials Needed</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </table>
             </div>
+        </div>
 
-            <script src="node_modules/jquery/dist/jquery.js"></script>
-            <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-            <script src="global.js"></script>
-            <script src="laura.js"></script>
-            <script src="michael.js"></script>
-            <script src="bill.js"></script>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="global.js"></script>
+    <script src="laura.js"></script>
+    <script src="michael.js"></script>
+    <script src="bill.js"></script>
 </body>
 
 </html>
