@@ -15,11 +15,21 @@ function onCreateTask() {
     let taskCell = row.insertCell(0);
     taskCell.innerHTML = taskValue;
     taskCell.setAttribute('id', `task-name-${rowId}`);
-
-    const materialValue = document.querySelector('#materials').value;
+    let materialValueOne = document.querySelector('#materials-one').value;
+    let materialValueTwo = document.querySelector('#materials-two').value;
+    let materialValueThree = document.querySelector('#materials-three').value;
+    if (materialValueOne === ""){
+       materialValueOne = "N/A" 
+    } if (materialValueTwo === ""){
+        materialValueTwo = "N/A"
+    } if (materialValueThree === ""){
+        materialValueThree = "N/A"
+    } 
     let materialsCell = row.insertCell(1);
-    materialsCell.innerHTML = materialValue;
-    materialsCell.setAttribute('id', `materials-${rowId}`);
+    materialsCell.innerHTML = `<ol><li>${materialValueOne}</li><li>${materialValueTwo}</li><li>${materialValueThree}</li></ol>`
+    materialsCell.setAttribute('id', `materials-one-${rowId}`);
+    materialsCell.setAttribute('id', `materials-two-${rowId}`);
+    materialsCell.setAttribute('id', `materials-three-${rowId}`);
 
     const dueDateValue = document.querySelector('#due-date').value;
     let dueDateCell = row.insertCell(2);
@@ -40,7 +50,7 @@ function onCreateTask() {
     }
 
     //Update array with complete task info
-    taskArray[2].push({taskId, taskValue, materialValue, dueDateValue});
+    taskArray[2].push({taskId, taskValue, materialValueOne, materialValueTwo, materialValueThree, dueDateValue});
 
     //Increment counters and return form to original state
     taskId++;
@@ -78,7 +88,9 @@ function createEditButton(editId, taskId) {
 
         //Populate form with values from current row
         document.querySelector('#task').value = document.querySelector(`#task-name-${editId}`).innerHTML;
-        document.querySelector('#materials').value = document.querySelector(`#materials-${editId}`).innerHTML;
+        document.querySelector('#materials-one').value = taskArray[2][editId].materialValueOne;
+        document.querySelector('#materials-two').value = taskArray[2][editId].materialValueTwo;
+        document.querySelector('#materials-three').value = taskArray[2][editId].materialValueThree;
         document.querySelector('#due-date').value = document.querySelector(`#due-date-${editId}`).innerHTML;
 
         //Change create button to update button
@@ -100,6 +112,9 @@ function createEditButton(editId, taskId) {
 //Return form to its original state
 function resetForm() {
     document.querySelector('#task').value = '';
-    document.querySelector('#materials').selectedIndex = 0;
+    document.querySelector('#materials-one').value = '';
+    document.querySelector('#materials-two').value = '';
+    document.querySelector('#materials-three').value = '';
+    document.querySelector('#materials-one').selectedIndex = 0;
     document.querySelector('#due-date').selectedIndex = 0;
 }
