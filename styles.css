@@ -1,3 +1,11 @@
 body {
     background: lightslategray;
 }
+
+input:hover {
+    background-color: lightsteelblue;
+}
+
+img {
+    border-radius: 50%;
+}
