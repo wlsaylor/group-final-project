@@ -115,6 +115,5 @@ function resetForm() {
     document.querySelector('#materials-one').value = '';
     document.querySelector('#materials-two').value = '';
     document.querySelector('#materials-three').value = '';
-    document.querySelector('#materials-one').selectedIndex = 0;
-    document.querySelector('#due-date').selectedIndex = 0;
+    document.querySelector('#due-date').value = '';
 }
